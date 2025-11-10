@@ -2,7 +2,7 @@
 ### What is this?
 A fun web application that can read one or more faces and pinpoint them with high accuracy on any number of subsequent test images. Uses a [Next.js](https://nextjs.org/) frontend and a [Spring Boot](https://spring.io/projects/spring-boot) backend.
 
-Currently, the web interface only allows one target face and one test image to be uploaded but I'm working on that. I'm hoping that in the near future, I'll be able to deploy this app on an actual website.
+Currently, the web interface only allows one target face and one test image to be uploaded but I'm working on that.
 
 ### How do I use it?
 After following setup instructions in the [Dependencies & Setup](#dependencies--setup) section, then with the Next.js and Spring Boot servers running:
@@ -19,7 +19,7 @@ The app will spit out a result image, which is the test image with a red boundin
 
 It's worth mentioning that I use `pnpm` to manage frontend packages and to run the frontend, although I don't know whether it's actually required to run this project.
 
-Install the necessary `node_modules` by running `npm install` inside the frontend Next.js project, or whatever the `pnpm` equivalent is. I run `pnpm dev` to run the frontend server (again, I don't know what I'm doing with frontend development).
+Install the necessary `node_modules` by running `npm install` inside the frontend Next.js project, or whatever the `pnpm` equivalent is. I run `pnpm dev` to run the frontend server (I'm not a frontend guy).
 
 For the backend Spring Boot project, running `mvn package` (or `./mvnw package` if you don't have Maven) should be all that's required. After that, `Application.java` can be executed to start up the backend server.
 
@@ -31,11 +31,11 @@ Thank you **Professor Shiqi Yu** and **Yuantao Feng** for training and providing
 Thank you **Professor Weihong Deng**, **PhD Candidate Zhong Yaoyao**, and **Master Candidate Chengrui Wang** for training and providing the SFace model!
 
 ## Why Java?
-I started this project because my internship manager asked me to do this, both as a learning experience and as a test of my skills. Before I started looking at OpenCV, I asked him what programming language I should use and the answer was ***"preferably Java"***.
+Initially developed as a prototype, this project was designed for possible integration into the company where I completed my internship in Summer 2024. Before I started looking at OpenCV, I asked my office manager what programming language I should use for the application and the answer was ***"preferably Java"***.
 
-This made sense in the context of the workplace because most of our projects were written in Java. However, this did not make sense in the context of OpenCV as I discovered quickly that OpenCV is native to C++. While there is an official OpenCV Java API, I chose to use a [third-party API](https://github.com/bytedeco/javacv) mostly because the official one isn't available as a Maven dependency.
+This made sense in the context of the workplace because most of the company's projects were written in Java, allowing seamless integration. However, this did not make sense in the context of OpenCV as I discovered quickly that OpenCV is native to C++. While there is an official OpenCV Java API, I chose to use a [third-party API](https://github.com/bytedeco/javacv) mostly because the official one isn't available as a Maven dependency.
 
-The reason I say using Java makes no sense is because there was zero technical reason for me to do so. I'm familiar enough with C++ and Python to have not done this in Java, and it wasn't required by my manager. But ever since I started writing the code, I've been gaslighting myself into thinking that I was in too deep already.
+I say Java makes little sense because I could have easily done this project in C++ or Python, as Java was only ever a recommendation. But ever since I started writing the code, I kept on gaslighting myself into thinking that I was in too deep already.
 
 As a result, I dealt with scarce documentation (having to cross-reference C++ docs), unhelpful error messages (if C++ errors weren't cryptic enough, they look worse coming from the JVM), and a LOT of manual memory management (why do I have to free C pointers in Java?).
 
